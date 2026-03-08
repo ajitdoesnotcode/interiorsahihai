@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Interiorsahihai — Find Your Perfect Interior Designer</title>
+<title>Interiorsahihai — India's Interior Design Marketplace</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
 <style>
@@ -671,6 +671,70 @@
     .sp-hero-title .t2 { font-size: clamp(44px, 13vw, 72px); }
     .sp-hero-title .t3 { font-size: clamp(28px, 7vw, 44px); }
   }
+  /* ── TAGLINE STRIP ── */
+  .tagline-strip {
+    background: var(--mocha-pale);
+    padding: 22px 64px;
+    display: flex; align-items: center; justify-content: center;
+    gap: 16px;
+    border-bottom: 1px solid rgba(164,120,100,0.12);
+  }
+  .ts-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 48px; line-height: 1;
+    color: var(--mocha-light); opacity: 0.5;
+    flex-shrink: 0; margin-top: -8px;
+  }
+  .ts-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(16px, 2vw, 22px);
+    font-style: italic; font-weight: 400;
+    color: var(--mocha-deeper); letter-spacing: 0.3px;
+    text-align: center; line-height: 1.5;
+  }
+
+  /* ── DUAL CTA ── */
+  .dual-cta {
+    display: grid; grid-template-columns: 1fr 1fr;
+    min-height: 500px;
+  }
+  .dcta-panel {
+    padding: 96px 64px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .dcta-customer { background: var(--mocha-pale); }
+  .dcta-designer { background: var(--black); }
+
+  .dcta-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(32px, 3.5vw, 50px);
+    font-weight: 300; line-height: 1.1;
+    color: var(--mocha-deeper); margin-bottom: 20px;
+  }
+  .dcta-designer .dcta-title { color: var(--white); }
+  .dcta-title em { font-style: italic; font-weight: 600; color: var(--mocha); }
+
+  .dcta-body {
+    font-size: 15px; color: var(--mid-grey);
+    line-height: 1.8; font-weight: 300;
+    max-width: 400px; margin-bottom: 36px;
+  }
+
+  .dcta-free-tag {
+    font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: rgba(255,255,255,0.3); font-weight: 500;
+    margin-bottom: 16px;
+  }
+  .dcta-btn { align-self: flex-start; }
+
+  @media (max-width: 900px) {
+    .dual-cta { grid-template-columns: 1fr; }
+    .dcta-panel { padding: 60px 24px; }
+    .tagline-strip { padding: 20px 24px; }
+    .ts-text { font-size: 15px; }
+    .ts-quote { font-size: 36px; }
+  }
+
   /* ── HAMBURGER & MOBILE MENU ── */
   .hamburger {
     display: none; flex-direction: column; justify-content: center;
@@ -726,7 +790,7 @@
   <div class="modal">
     <button class="modal-x" onclick="closeModal()">✕</button>
     <h2>Find Your Designer</h2>
-    <p>Tell us about your project — we'll match you with the right designer in Ahmedabad within 24 hours.</p>
+    <p>Tell us about your project — we'll match you with the right designer in your city within 24 hours.</p>
     <div class="frow">
       <div class="fg"><label>Your Name</label><input type="text" placeholder="Priya Shah"></div>
       <div class="fg"><label>Phone</label><input type="tel" placeholder="+91 98765 43210"></div>
@@ -735,7 +799,7 @@
       <div class="fg"><label>Project Type</label><select><option>Residential — Full Home</option><option>Residential — Single Room</option><option>Commercial Space</option><option>Office Interior</option></select></div>
       <div class="fg"><label>Budget</label><select><option>₹2L – ₹5L</option><option>₹5L – ₹10L</option><option>₹10L – ₹20L</option><option>₹20L+</option></select></div>
     </div>
-    <div class="fg"><label>Describe your dream space</label><textarea placeholder="3BHK in Bopal, modern minimal, warm tones, open kitchen..."></textarea></div>
+    <div class="fg"><label>Describe your dream space</label><textarea placeholder="3BHK in Bandra, modern minimal, warm tones, open kitchen..."></textarea></div>
     <button class="submit" onclick="handleSubmit()">Match Me With a Designer →</button>
   </div>
 </div>
@@ -782,13 +846,13 @@
 
     <div class="hero-main">
       <div class="hero-content">
-        <p class="hero-eyebrow">Ahmedabad's Interior Design Marketplace</p>
+        <p class="hero-eyebrow">India's Interior Design Marketplace</p>
         <h1 class="hero-title">
           <span class="line1">Your home,</span>
           <span class="line2">FINALLY <span class="filled">SAHI</span></span>
-          <span class="line3">— guaranteed.</span>
+          <span class="line3">— the way it should be.</span>
         </h1>
-        <p class="hero-sub">Browse verified interior designers, compare real portfolios, read honest reviews, get multiple quotes — all in one place. No guesswork. No middlemen. No ₹3 lakh mistakes.</p>
+        <p class="hero-sub">India's largest verified marketplace for interior designers. Browse real portfolios, compare honest reviews, get multiple quotes — across every city, every budget. No guesswork. No middlemen. No ₹3 lakh mistakes.</p>
         <div class="hero-actions">
           <a class="btn-fill" onclick="openModal()">Find a Designer</a>
           <a class="btn-ghost-light" onclick="document.getElementById('designers').scrollIntoView({behavior:'smooth'})">See portfolios <span class="arr">→</span></a>
@@ -802,44 +866,43 @@
     </div>
 
     <div class="hero-stats">
-      <div class="hstat"><div class="hstat-num">120+</div><div class="hstat-label">Verified<br>Designers</div></div>
-      <div class="hstat"><div class="hstat-num">850+</div><div class="hstat-label">Projects<br>Completed</div></div>
+      <div class="hstat"><div class="hstat-num">4,200+</div><div class="hstat-label">Verified<br>Designers</div></div>
+      <div class="hstat"><div class="hstat-num">38,000+</div><div class="hstat-label">Projects<br>Completed</div></div>
       <div class="hstat"><div class="hstat-num">4.8★</div><div class="hstat-label">Average<br>Rating</div></div>
       <div class="hstat"><div class="hstat-num">₹0</div><div class="hstat-label">Hidden<br>Charges</div></div>
     </div>
   </div>
 
+
+  <!-- Tagline strip -->
+  <div class="tagline-strip">
+    <span class="ts-quote">"</span>
+    <span class="ts-text">Because your home is not just a space. It&#39;s who you are.</span>
+    <span class="ts-quote">"</span>
+  </div>
   <div class="search-wrap">
     <p class="search-eyebrow">Discover Designers</p>
     <div class="search-bar">
+      <select><option>All Cities</option><option>Mumbai</option><option>Delhi NCR</option><option>Bangalore</option><option>Ahmedabad</option><option>Hyderabad</option><option>Chennai</option><option>Pune</option><option>Kolkata</option></select>
       <select><option>All Styles</option><option>Modern Minimal</option><option>Classic Indian</option><option>Contemporary</option><option>Bohemian</option><option>Luxury</option></select>
-      <input type="text" placeholder="Search by name, style, area or budget in Ahmedabad...">
+      <input type="text" placeholder="Search by name, style, city or budget across India...">
       <button class="search-btn">Search →</button>
     </div>
-    <div class="filter-tags">
-      <button class="ftag on">All</button>
-      <button class="ftag">Under ₹5L</button>
-      <button class="ftag">₹5L–₹15L</button>
-      <button class="ftag">Luxury ₹15L+</button>
-      <button class="ftag">Residential</button>
-      <button class="ftag">Commercial</button>
-      <button class="ftag">Top Rated ★</button>
-      <button class="ftag">New Joiners</button>
-    </div>
+
   </div>
 
   <section id="designers">
     <div class="sec-hd fi">
-      <div><p class="sec-eye">Featured Designers</p><h2 class="sec-title">Ahmedabad's finest,<br><em>all in one place</em></h2></div>
-      <a class="sec-link">View all 120+ designers</a>
+      <div><p class="sec-eye">Featured Designers</p><h2 class="sec-title">India's finest,<br><em>all in one place</em></h2></div>
+      <a class="sec-link">View all 4,200+ designers</a>
     </div>
     <div class="dgrid">
-      <div class="dcard fi"><div class="dcard-bg db1"></div><span class="dcard-style">Modern Minimal</span><div class="dcard-rating">★ 4.9</div><div class="dcard-overlay"><div class="dname">Priya Mehta</div><div class="dspec">Residential · Commercial</div><div class="dmeta"><span class="dm"><strong>12 yrs</strong> exp</span><span class="dm"><strong>84</strong> projects</span><span class="dm">From <strong>₹4.5L</strong></span></div><div class="dactions"><button class="dbtn dbtn-p" onclick="openModal()">Get Quote</button><button class="dbtn dbtn-g">Portfolio</button></div></div></div>
-      <div class="dcard fi"><div class="dcard-bg db2"></div><span class="dcard-style">Contemporary</span><div class="dcard-rating">★ 4.8</div><div class="dcard-overlay"><div class="dname">Arjun Desai</div><div class="dspec">Residential · Luxury</div><div class="dmeta"><span class="dm"><strong>8 yrs</strong> exp</span><span class="dm"><strong>61</strong> projects</span><span class="dm">From <strong>₹6L</strong></span></div><div class="dactions"><button class="dbtn dbtn-p" onclick="openModal()">Get Quote</button><button class="dbtn dbtn-g">Portfolio</button></div></div></div>
-      <div class="dcard fi"><div class="dcard-bg db3"></div><span class="dcard-style">Warm & Earthy</span><div class="dcard-rating">★ 5.0</div><div class="dcard-overlay"><div class="dname">Riya Shah</div><div class="dspec">Residential · Offices</div><div class="dmeta"><span class="dm"><strong>15 yrs</strong> exp</span><span class="dm"><strong>120</strong> projects</span><span class="dm">From <strong>₹8L</strong></span></div><div class="dactions"><button class="dbtn dbtn-p" onclick="openModal()">Get Quote</button><button class="dbtn dbtn-g">Portfolio</button></div></div></div>
-      <div class="dcard fi"><div class="dcard-bg db4"></div><span class="dcard-style">Classic Luxury</span><div class="dcard-rating">★ 4.7</div><div class="dcard-overlay"><div class="dname">Karan Patel</div><div class="dspec">Commercial · Retail</div><div class="dmeta"><span class="dm"><strong>10 yrs</strong> exp</span><span class="dm"><strong>95</strong> projects</span><span class="dm">From <strong>₹5L</strong></span></div><div class="dactions"><button class="dbtn dbtn-p" onclick="openModal()">Get Quote</button><button class="dbtn dbtn-g">Portfolio</button></div></div></div>
-      <div class="dcard fi"><div class="dcard-bg db5"></div><span class="dcard-style">Luxury</span><div class="dcard-rating">★ 4.9</div><div class="dcard-overlay"><div class="dname">Meera Joshi</div><div class="dspec">Luxury Residential</div><div class="dmeta"><span class="dm"><strong>18 yrs</strong> exp</span><span class="dm"><strong>200+</strong> projects</span><span class="dm">From <strong>₹15L</strong></span></div><div class="dactions"><button class="dbtn dbtn-p" onclick="openModal()">Get Quote</button><button class="dbtn dbtn-g">Portfolio</button></div></div></div>
-      <div class="dcard fi"><div class="dcard-bg db6"></div><span class="dcard-style">Bohemian</span><div class="dcard-rating">★ 4.8</div><div class="dcard-overlay"><div class="dname">Siddharth Rao</div><div class="dspec">Residential · Cafés</div><div class="dmeta"><span class="dm"><strong>6 yrs</strong> exp</span><span class="dm"><strong>45</strong> projects</span><span class="dm">From <strong>₹3L</strong></span></div><div class="dactions"><button class="dbtn dbtn-p" onclick="openModal()">Get Quote</button><button class="dbtn dbtn-g">Portfolio</button></div></div></div>
+      <div class="dcard fi"><div class="dcard-bg db1"></div><span class="dcard-style">Modern Minimal</span><div class="dcard-rating">★ 4.9</div><div class="dcard-overlay"><div class="dname">Priya Mehta</div><div class="dspec">Mumbai · Residential</div><div class="dmeta"><span class="dm"><strong>12 yrs</strong> exp</span><span class="dm"><strong>184</strong> projects</span><span class="dm">From <strong>₹6L</strong></span></div><div class="dactions"><button class="dbtn dbtn-p" onclick="openModal()">Get Quote</button><button class="dbtn dbtn-g">Portfolio</button></div></div></div>
+      <div class="dcard fi"><div class="dcard-bg db2"></div><span class="dcard-style">Contemporary</span><div class="dcard-rating">★ 4.8</div><div class="dcard-overlay"><div class="dname">Arjun Kapoor</div><div class="dspec">Delhi NCR · Luxury</div><div class="dmeta"><span class="dm"><strong>9 yrs</strong> exp</span><span class="dm"><strong>120</strong> projects</span><span class="dm">From <strong>₹8L</strong></span></div><div class="dactions"><button class="dbtn dbtn-p" onclick="openModal()">Get Quote</button><button class="dbtn dbtn-g">Portfolio</button></div></div></div>
+      <div class="dcard fi"><div class="dcard-bg db3"></div><span class="dcard-style">Warm & Earthy</span><div class="dcard-rating">★ 5.0</div><div class="dcard-overlay"><div class="dname">Riya Nair</div><div class="dspec">Bangalore · Offices</div><div class="dmeta"><span class="dm"><strong>15 yrs</strong> exp</span><span class="dm"><strong>240</strong> projects</span><span class="dm">From <strong>₹10L</strong></span></div><div class="dactions"><button class="dbtn dbtn-p" onclick="openModal()">Get Quote</button><button class="dbtn dbtn-g">Portfolio</button></div></div></div>
+      <div class="dcard fi"><div class="dcard-bg db4"></div><span class="dcard-style">Classic Luxury</span><div class="dcard-rating">★ 4.7</div><div class="dcard-overlay"><div class="dname">Karan Iyer</div><div class="dspec">Hyderabad · Commercial</div><div class="dmeta"><span class="dm"><strong>11 yrs</strong> exp</span><span class="dm"><strong>195</strong> projects</span><span class="dm">From <strong>₹7L</strong></span></div><div class="dactions"><button class="dbtn dbtn-p" onclick="openModal()">Get Quote</button><button class="dbtn dbtn-g">Portfolio</button></div></div></div>
+      <div class="dcard fi"><div class="dcard-bg db5"></div><span class="dcard-style">Luxury</span><div class="dcard-rating">★ 4.9</div><div class="dcard-overlay"><div class="dname">Meera Singhania</div><div class="dspec">Mumbai · Luxury Residential</div><div class="dmeta"><span class="dm"><strong>18 yrs</strong> exp</span><span class="dm"><strong>300+</strong> projects</span><span class="dm">From <strong>₹20L</strong></span></div><div class="dactions"><button class="dbtn dbtn-p" onclick="openModal()">Get Quote</button><button class="dbtn dbtn-g">Portfolio</button></div></div></div>
+      <div class="dcard fi"><div class="dcard-bg db6"></div><span class="dcard-style">Bohemian</span><div class="dcard-rating">★ 4.8</div><div class="dcard-overlay"><div class="dname">Siddharth Rao</div><div class="dspec">Pune · Residential & Cafés</div><div class="dmeta"><span class="dm"><strong>6 yrs</strong> exp</span><span class="dm"><strong>88</strong> projects</span><span class="dm">From <strong>₹4L</strong></span></div><div class="dactions"><button class="dbtn dbtn-p" onclick="openModal()">Get Quote</button><button class="dbtn dbtn-g">Portfolio</button></div></div></div>
     </div>
   </section>
 
@@ -849,38 +912,50 @@
       <div class="step fi"><div class="step-n">01</div><div class="step-ico">🏠</div><div class="step-title">Tell us your space</div><p class="step-desc">Share your project — type, budget, style, timeline. 2 minutes. No fluff.</p><div class="step-bar"></div></div>
       <div class="step fi"><div class="step-n">02</div><div class="step-ico">✦</div><div class="step-title">We match you</div><p class="step-desc">We surface the top 3–5 designers for your brief, budget, and aesthetic.</p><div class="step-bar"></div></div>
       <div class="step fi"><div class="step-n">03</div><div class="step-ico">📐</div><div class="step-title">Compare & choose</div><p class="step-desc">Compare portfolios, verified reviews, and quotes side by side. No pressure.</p><div class="step-bar"></div></div>
-      <div class="step fi"><div class="step-n">04</div><div class="step-ico">🎉</div><div class="step-title">Love your home</div><p class="step-desc">Move into a space that finally feels like you. Pukka guarantee.</p><div class="step-bar"></div></div>
+      <div class="step fi"><div class="step-n">04</div><div class="step-ico">🎉</div><div class="step-title">Love your home</div><p class="step-desc">Move into a space that finally feels like you. That's the only outcome we work towards.</p><div class="step-bar"></div></div>
     </div>
   </section>
 
   <section id="testimonials">
-    <div class="sec-hd fi"><div><p class="sec-eye">Real people. Real homes.</p><h2 class="sec-title">What our customers<br><em>actually say</em></h2></div><a class="sec-link">Read 400+ reviews</a></div>
+    <div class="sec-hd fi"><div><p class="sec-eye">Real people. Real homes.</p><h2 class="sec-title">What our customers<br><em>actually say</em></h2></div><a class="sec-link">Read 12,000+ reviews</a></div>
     <div class="tgrid">
-      <div class="tcard fi"><span class="tq">"</span><p class="ttext">We'd been burned by a contractor before and were terrified. Interiorsahihai matched us with Priya and she just got it — budget, taste, everything. Our 3BHK looks like a magazine now.</p><div class="tstars">★★★★★</div><div class="tauthor">Nisha & Rohan Kapoor</div><div class="trole">Prahlad Nagar, Ahmedabad</div></div>
-      <div class="tcard fi"><span class="tq">"</span><p class="ttext">Got 4 quotes in 48 hours. The transparency was unreal. Chose Arjun and couldn't be happier.</p><div class="tstars">★★★★★</div><div class="tauthor">Dhruv Mehta</div><div class="trole">SG Highway</div></div>
-      <div class="tcard fi"><span class="tq">"</span><p class="ttext">Zero idea about design. The matching process made me feel so confident. Worth every rupee.</p><div class="tstars">★★★★★</div><div class="tauthor">Sneha Trivedi</div><div class="trole">Bopal, Ahmedabad</div></div>
+      <div class="tcard fi"><span class="tq">"</span><p class="ttext">We'd been burned by a contractor before and were terrified. Interiorsahihai matched us with Priya and she just got it — budget, taste, everything. Our 3BHK looks like a magazine now.</p><div class="tstars">★★★★★</div><div class="tauthor">Nisha & Rohan Kapoor</div><div class="trole">Bandra West, Mumbai</div></div>
+      <div class="tcard fi"><span class="tq">"</span><p class="ttext">Got 4 quotes in 48 hours from designers across Delhi. The transparency was unreal. Chose Arjun and couldn't be happier.</p><div class="tstars">★★★★★</div><div class="tauthor">Vikram Malhotra</div><div class="trole">Gurgaon, Delhi NCR</div></div>
+      <div class="tcard fi"><span class="tq">"</span><p class="ttext">Moved to Bangalore for work. Found my designer here in 20 minutes. The matching process made me feel so confident.</p><div class="tstars">★★★★★</div><div class="tauthor">Ananya Krishnan</div><div class="trole">Koramangala, Bangalore</div></div>
     </div>
   </section>
 
-  <div class="fd-wrap" id="for-designers">
-    <div class="fd-content fi">
-      <p class="sec-eye">Are you a designer?</p>
-      <h2 class="sec-title" style="color:var(--white)">Stop chasing clients.<br><em style="color:var(--peach);">Let them find you.</em></h2>
-      <p>Join Ahmedabad's fastest-growing interior design marketplace. Build your verified profile, showcase your work, and receive qualified leads. No commission on your first 5 projects.</p>
-      <a class="btn-peach" onclick="openModal()">Join as a Designer →</a>
+  <!-- Two-panel CTA section -->
+  <div class="dual-cta" id="for-designers">
+
+    <!-- For Customers panel -->
+    <div class="dcta-panel dcta-customer fi">
+      <p class="sec-eye">Finding the right designer feels hard</p>
+      <h2 class="dcta-title">Let us take that<br><em>weight off you.</em></h2>
+      <p class="dcta-body">Tell us about your space — your style, your budget, your dream. We do the matching. You meet designers who actually get it. Across every city in India.</p>
+      <a class="btn-fill dcta-btn" onclick="openModal()">Find My Designer →</a>
     </div>
-    <div class="fd-visual"><div class="fd-big"><span class="fd-big-num">FREE</span><span class="fd-big-text">to list your profile</span></div></div>
+
+    <!-- For Designers panel -->
+    <div class="dcta-panel dcta-designer fi">
+      <p class="sec-eye">Are you an interior designer?</p>
+      <h2 class="dcta-title" style="color:var(--white)">Your craft deserves<br><em style="color:var(--peach);">to be seen.</em></h2>
+      <p class="dcta-body" style="color:rgba(255,255,255,0.42);">From Ahmedabad to Chennai, India&#39;s homeowners are looking for someone exactly like you. Build your verified profile, let your portfolio speak, and wake up to leads — not cold calls.</p>
+      <div class="dcta-free-tag">Free to join · No commission on first 5 projects</div>
+      <a class="btn-peach dcta-btn" onclick="openModal()">List My Profile →</a>
+    </div>
+
   </div>
 
   <footer>
     <div class="footer-top">
-      <div class="ft-brand"><span class="ft-logo">Interiors<span>sahihai</span></span><p>Ahmedabad's first marketplace for interior designers. Find, compare, and hire with confidence. Sahi decision, guaranteed.</p></div>
+      <div class="ft-brand"><span class="ft-logo">Interiors<span>sahihai</span></span><p>Because your home is not just a space — it's who you are. We help you find the designer who gets that.</p></div>
       <div class="ft-col"><h4>For Customers</h4><ul><li><a>Browse Designers</a></li><li><a>How It Works</a></li><li><a>Get Free Quotes</a></li><li><a>Reviews</a></li></ul></div>
       <div class="ft-col"><h4>For Designers</h4><ul><li><a>List Your Profile</a></li><li><a>Pricing</a></li><li><a>FAQ</a></li><li><a>Success Stories</a></li></ul></div>
       <div class="ft-col"><h4>Company</h4><ul><li><a onclick="showPage('story')">Our Story</a></li><li><a>Blog</a></li><li><a>Contact</a></li><li><a>Privacy Policy</a></li></ul></div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Interiorsahihai. Made with ♥ in Ahmedabad.</p>
+      <p>© 2025 Interiorsahihai. Made with ♥ in India.</p>
       <span class="ft-tagline">Kyunki aapka ghar, sahi hona chahiye.</span>
     </div>
   </footer>
@@ -904,10 +979,10 @@
           <span class="t3">and a bad suthar.</span>
         </h1>
         <div class="sp-hero-meta">
-          <div class="sp-meta-item"><strong>Ahmedabad</strong>Where it happened</div>
+          <div class="sp-meta-item"><strong>Ahmedabad</strong>Where it started</div>
           <div class="sp-meta-item"><strong>₹3,00,000</strong>Lost to false trust</div>
           <div class="sp-meta-item"><strong>1 Home</strong>My first. My dream.</div>
-          <div class="sp-meta-item"><strong>2 EMIs</strong>Running simultaneously</div>
+          <div class="sp-meta-item"><strong>Crores of Indians</strong>Who face this every year</div>
         </div>
       </div>
     </div>
@@ -971,7 +1046,7 @@
     </div>
     <div class="sp-signoff-right">
       <div class="sp-signoff-cta-label">Ready to find your designer?</div>
-      <div class="sp-signoff-cta-text">Browse verified interior designers in Ahmedabad — portfolios, real reviews, transparent quotes. <strong>No more guesswork.</strong></div>
+      <div class="sp-signoff-cta-text">Browse verified interior designers across India — portfolios, real reviews, transparent quotes. <strong>No more guesswork.</strong></div>
       <a class="btn-dark" onclick="showPage('home');openModal()">Find a Designer →</a>
     </div>
   </div>
@@ -984,7 +1059,7 @@
       <div class="ft-col"><h4>Back Home</h4><ul><li><a onclick="showPage('home')">← Go to Interiorsahihai</a></li></ul></div>
     </div>
     <div class="footer-bottom">
-      <p>© 2025 Interiorsahihai. Made with ♥ in Ahmedabad.</p>
+      <p>© 2025 Interiorsahihai. Made with ♥ in India.</p>
       <span class="ft-tagline">Kyunki aapka ghar, sahi hona chahiye.</span>
     </div>
   </footer>
